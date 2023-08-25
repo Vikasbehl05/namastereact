@@ -1,0 +1,107 @@
+.appLayout {
+  margin-bottom: 20px;
+}
+
+.header {
+  border: 1px solid #000;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  display: flex;
+}
+
+.logo {
+  width: 75px;
+}
+
+.nav-iteams {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.nav-iteams ul {
+  display: flex;
+}
+
+.nav-iteams li {
+  margin: 10px;
+  list-style: none;
+}
+
+.res-card {
+  background-color: #eeeee5;
+  border-radius: 5px;
+  justify-items: center;
+  width: 150px;
+  margin: 15px;
+  padding: 5px;
+}
+
+.res-card:hover {
+  border: 1px solid #000;
+}
+
+.res-logo {
+  width: 135px;
+  padding: 10px;
+}
+
+.res-container {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 35px;
+  display: flex;
+}
+
+.filter-section {
+  flex-direction: row;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.search {
+  justify-content: space-evenly;
+  margin: 10px;
+  display: flex;
+}
+
+.bodyContainer {
+  size: auto;
+  margin: 10px;
+}
+
+.filter {
+  padding: 5px;
+}
+
+.simmerUi {
+  background-color: #ebeaf0;
+  border: 5px #98a58c;
+  border-radius: 10px;
+  justify-items: center;
+  width: 150px;
+  height: 250px;
+  margin: 15px;
+}
+
+.Loginbtn:hover {
+  color: #fff;
+  background-color: #6855e0;
+  box-shadow: 0 0 20px #6855e099;
+}
+
+.Loginbtn {
+  cursor: pointer;
+  color: #6855e0;
+  background-color: #fff;
+  border: 1px solid #6855e0;
+  border-radius: 4px;
+  width: 150px;
+  margin: 10px;
+  padding: 10px 0;
+  font-weight: 600;
+  transition: all .4s;
+  box-shadow: 0 0 20px #6855e033;
+}
+
+/*# sourceMappingURL=index.9e4c6fd2.css.map */
