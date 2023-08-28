@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import ResurantCard from "./ResurantCard";
 import SimmerUi from "./Shimmer";
-import { FilterSection } from "./FilterSection";
+import { Link } from "react-router-dom";
+import { RESURANT_LIST_URL } from "../../utils/constance";
 
 
 const Body = () => {
@@ -13,8 +14,9 @@ const Body = () => {
         const resList = fetchResList();
     }, []);
 
+
     const fetchResList = async () => {
-        const response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9314583&lng=77.6299858&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const response = await fetch(RESURANT_LIST_URL);
         if (!response.ok) {
             throw new Error("Problem fetching api");
         }
@@ -54,7 +56,7 @@ const Body = () => {
             </div>
             <div className='res-container'>
                 {
-                    ListOfRes.map((restaurant) => (<ResurantCard key={restaurant.info.key} resData={restaurant} />))
+                    ListOfRes.map((restaurant) => (<Link to={"/resmenu/" + restaurant.info.id} key={restaurant.info.key}><ResurantCard resData={restaurant} /></Link>))
                 }
             </div>
         </div>

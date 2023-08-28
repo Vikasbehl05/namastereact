@@ -26,8 +26,12 @@
 .nav-iteams li {
     margin: 10px;
     list-style: none;
-
 }
+
+li {
+    list-style: none;
+}
+
 
 .res-card {
     width: 150px;
@@ -107,4 +111,47 @@
     color: rgb(104, 85, 224);
     background-color: rgba(255, 255, 255, 1);
     border: 1px solid rgba(104, 85, 224, 1);
+}
+
+/* css for menu card item */
+
+.menu-item {
+    display: flex;
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+.item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-name {
+    margin: 0;
+}
+
+.item-description {
+    margin: 5px 0;
+    color: #666;
+}
+
+.item-price {
+    margin: 0;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    padding: 5px 10px;
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
