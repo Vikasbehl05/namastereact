@@ -28,35 +28,36 @@ const Body = () => {
     }
 
     const filterResutant = () => {
-        const filteerResList = filterRes.filter((res) => res.info.name.toLowerCase().includes(inputVal))
+        const filteerResList = filterRes.filter((res) => res?.info?.name.toLowerCase().includes(inputVal))
         setListOfRes(filteerResList)
     }
 
-    if (ListOfRes.length === 0) {
+    if (ListOfRes?.length === 0) {
         return (
             <SimmerUi />
         )
     }
+
     return (
-        <div className='bodyContainer'>
-            <div className="filter-section">
-                <div className='search'>
-                    <input type="text" value={inputVal} onChange={(e) => { setInputVal(e.target.value) }}>
+        <div className='m-3'>
+            <div className="flex flex-row justify-evenly">
+                <div className='flex justify-evenly m-3'>
+                    <input className=" border-2 m-3 " type="text" value={inputVal} onChange={(e) => { setInputVal(e.target.value) }}>
                     </input>
-                    <button type="submit" onClick={() => {
+                    <button className="border-2 p-1 m-3" type="submit" onClick={() => {
                         filterResutant()
                     }}>
                         Search
                     </button>
                 </div>
-                <button className="filter" onClick={() => {
-                    const filterList = ListOfRes.filter((res) => res.info.avgRating > 4)
+                <button className="p-2" onClick={() => {
+                    const filterList = ListOfRes?.filter((res) => res?.info?.avgRating > 4)
                     setListOfRes(filterList)
                 }}> Rating above 4</button>
             </div>
-            <div className='res-container'>
+            <div className='flex flex-wrap m-5 p-9 justify-between'>
                 {
-                    ListOfRes.map((restaurant) => (<Link to={"/resmenu/" + restaurant.info.id} key={restaurant.info.key}><ResurantCard resData={restaurant} /></Link>))
+                    ListOfRes?.map((restaurant) => (<Link to={"/resmenu/" + restaurant?.info?.id} key={restaurant.info.key}><ResurantCard resData={restaurant} /></Link>))
                 }
             </div>
         </div>

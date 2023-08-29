@@ -2,8 +2,8 @@ import { LOGO_URL } from "../../utils/constance"
 
 const Logo = () => {
     return (
-        <div className='logoContainer'>
-            <img className='logo' src={LOGO_URL}>
+        <div className='flex'>
+            <img className='w-20' src={LOGO_URL}>
             </img>
         </div>
     )

@@ -4,7 +4,7 @@ import { LogOut } from "./LogOutBtn";
 
 function Header() {
     return (
-        <div className='header'>
+        <div className='flex items-start justify-between border border-solid flex-row'>
             <Logo />
             <NavList />
             <LogOut />

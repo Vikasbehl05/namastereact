@@ -13,7 +13,7 @@ const root = ReactDom.createRoot(document.getElementById('root'));
 
 const AppLayout = () => {
     return (
-        <div className='appLayout'>
+        <div className='mb-5'>
             <Header />
             <Outlet />
 

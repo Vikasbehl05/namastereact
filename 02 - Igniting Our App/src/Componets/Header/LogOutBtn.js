@@ -11,7 +11,7 @@ export const LogOut = () => {
         }
     }
     return (
-        <button className='Loginbtn' onClick={() => { onClickToggle() }}>
+        <button className='cursor-pointer border-0 border-solid rounded font-semibold m-3 w-40 py-3 px-0 shadow-[0_0_20px_rgba(104,85,224,0.2)] text-[rgb(104,85,224)] ' onClick={() => { onClickToggle() }}>
             {loginBtn}
         </button>
     )
