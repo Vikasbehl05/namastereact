@@ -20,7 +20,6 @@ const useResMenu = () => {
         }
 
         const resJson = await res.json()
-
         setResMenu(resJson)
         if (resJson?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.title.includes("Top Picks")) {
             setTopRate(true)

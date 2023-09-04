@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ResurantCard from "./ResurantCard";
+import ResurantCard, { includeVegMark } from "./ResurantCard";
 import SimmerUi from "./Shimmer";
 import { Link } from "react-router-dom";
 import { RESURANT_LIST_URL } from "../../utils/constance";
@@ -14,6 +14,7 @@ const Body = () => {
         const resList = fetchResList();
     }, []);
 
+    const ResurantCardVeg = includeVegMark(ResurantCard)
 
     const fetchResList = async () => {
         const response = await fetch(RESURANT_LIST_URL);
@@ -21,7 +22,6 @@ const Body = () => {
             throw new Error("Problem fetching api");
         }
         const responseJson = await response.json()
-
         setListOfRes(responseJson?.data.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setFilterRes(responseJson?.data.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
@@ -57,7 +57,10 @@ const Body = () => {
             </div>
             <div className='flex flex-wrap m-5 p-9 justify-between'>
                 {
-                    ListOfRes?.map((restaurant) => (<Link to={"/resmenu/" + restaurant?.info?.id} key={restaurant.info.key}><ResurantCard resData={restaurant} /></Link>))
+                    ListOfRes?.map((restaurant) => (
+                        restaurant?.info?.veg ?
+                            <Link to={"/resmenu/" + restaurant?.info?.id} key={restaurant.info.id}><ResurantCardVeg resData={restaurant} /></Link> :
+                            <Link to={"/resmenu/" + restaurant?.info?.id} key={restaurant.info.id}><ResurantCard resData={restaurant} /></Link>))
                 }
             </div>
         </div>

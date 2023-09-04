@@ -1,5 +1,5 @@
 import React, { Children } from 'react'
-import ReactDom from 'react-dom'
+import ReactDom from 'react-dom/client'
 import Header from './Componets/Header/Header';
 import Body from './Componets/Body/Body';
 import { About } from './Componets/About/About';
